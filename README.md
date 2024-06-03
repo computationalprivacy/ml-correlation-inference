@@ -181,9 +181,11 @@ The results of Figures S7, S8 and S9 are already computed as a result of the exp
 
 ## 2 - Tables
 
+The following experiments are performed on real-world datasets. Run the ```notebooks/dataset_preprocessing.ipynb``` notebook do download and pre-process the datasets.
+
 ### Table 1
 
-Follow the instructions provided in the ```notebooks/dataset_preprocessing.ipynb``` notebook to download and preprocess the real-world datasets used in this experiment. Then run the following command:
+To reproduce the results of Table 1, run the following command:
 
 ```
 bash scripts/run_real_dataset_attack.sh communities_and_crime_v2 logreg logreg 3 NBR_CORES 1 0
@@ -212,7 +214,7 @@ The table results are aggregated in the following notebook: ```notebooks/results
 
 ### Tables 2 and S1
 
-To generate the results of Tables 2 and S1, run the following command:
+To reproduce the results of Tables 2 and S1, run the following command:
 
 ```
 bash scripts/run_large_scale_aia_attack.sh fifa19_v2 NBR_CORES
