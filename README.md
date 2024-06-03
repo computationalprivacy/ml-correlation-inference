@@ -1,6 +1,6 @@
 # Source code for "Correlations inference attacks against machine learning models" 
 
-Source code for pre-processing datasets, running experiments, and generating the figures of the "Correlations inference attacks against machine learning models" paper by Ana-Maria Cretu*, Florent Guépin*, and Yves-Alexandre de Montjoye (* denotes equal contribution). If you re-use this code please cite our paper.
+Source code for pre-processing datasets, running experiments, and generating the figures of the "Correlations inference attacks against machine learning models" [paper](https://arxiv.org/abs/2112.08806) by Ana-Maria Cretu*, Florent Guépin*, and Yves-Alexandre de Montjoye (* denotes equal contribution). If you re-use this code please cite our paper.
 
 ## Requirements
 
