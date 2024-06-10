@@ -4,7 +4,7 @@ Source code for pre-processing datasets, running experiments, and generating the
 
 ## Requirements
 
-For optimal execution we recommend using a machine with at least 40 cores and 2 GPUs. The cores are need to paralellize the execution of experiments using logistic regression models, while the GPUs are needed to parallelize the execution of experiments using multilayer perceptron models. The code can also be run using one GPU and fewer cores but it will be less efficient.
+For optimal execution we recommend using a machine with at least 40 cores and 2 GPUs. The cores are needed to paralellize the execution of experiments using logistic regression models, while the GPUs are needed to parallelize the execution of experiments using multilayer perceptron models. The code can also be run using one GPU and fewer cores but it will be less efficient.
 
 Install the environment:
 
