@@ -139,17 +139,36 @@ def which_bin_is_most_covered(start, end, K):
 def generate_correlation_matrices(nbr_columns, nbr_trials, bounds, lengths,
         constraints_scenario='column', balanced=False):
     """
-    If lengths is None, will generate random correlation matrices having an
-    equality constraint on the last column such that Corr(xi, y) = bounds[i-1].
-
-    If bounds is also None, will generate purely random correlation matrices.
-
-    Otherwise, lengths should be a list of ints, where the i-th element 
-    denotes the (inverse) length of the interval 
-    [bounds[i], bounds[i] + 1/lengths[i]) from which Corr(xi, y) will be sampled
-    uniformly at random.
-
     Generates `nbr_trials` correlation matrices, each of size `nbr_columns`.
+
+    Each correlation matrix is over variables denoted by and ordered as 
+    x_1,...,x_{n-1},y. The correlation matrix will be sampled conditionally on
+    the values given by `bounds` and `lengths`, as explained below.
+
+    If `bounds` is None, will generate purely random valid correlation matrices.
+
+    If `lengths` is None, will generate random correlation matrices depending
+    on the value of `constraints_scenario`:
+        - if `constraints_scenario`=column, we assume Corr(xi, y) to be known 
+        for all i=1,...,n-1 (given by Corr(xi, y)=bounds[i-1]) and we sample 
+        new and valid values for the other correlations Corr(xi, xj), 
+        1<=i<j<=n-1.
+
+        - if `constraints_scenario`=two, we assume Corr(x1, y) and Corr(x2, y) 
+        to be known (given by Corr(xi, y)=bounds[i-1], i=1,2) and we sample 
+        new and valid values for the other correlations Corr(xi, y), 3<=i<=n-1 
+        and Corr(xi, xj), 1<=i<j<=n-1.
+
+        - if `constraints_scenario`=all_but_target, we assume the entire 
+        correlation matrix to be known (and given by `bounds`), at the 
+        exception of Corr(x_{n-2},x_{n-1}).
+
+    If both `bounds` and `lengths` are not None, we generate constraints for
+    the entire column such that Corr(xi, y) is uniformly sampled between 
+    bounds[i] and bounds[i]+1/lenghts[i]. This can only be applied in the
+    `column` scenario.
+
+    For the meaning of `balanced`, check the method below. 
     """
     constraints, shuffle_constraints = [], True
     if bounds is None:
