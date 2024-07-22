@@ -1,6 +1,6 @@
 # Source code for "Correlations inference attacks against machine learning models" 
 
-Source code for pre-processing datasets, running experiments, and generating the figures of the "Correlations inference attacks against machine learning models" [paper](https://arxiv.org/abs/2112.08806) by Ana-Maria Cretu*, Florent Guépin*, and Yves-Alexandre de Montjoye (* denotes equal contribution). If you re-use this code please cite our paper.
+Source code for pre-processing datasets, running experiments, and generating the figures of the Science Advances paper [Correlations inference attacks against machine learning models](https://www.science.org/doi/10.1126/sciadv.adj9260) by Ana-Maria Cretu*, Florent Guépin*, and Yves-Alexandre de Montjoye (* denotes equal contribution).
 
 ## Requirements
 
@@ -222,3 +222,19 @@ To generate Figure S6, run the corresponding cell in the following notebook: ```
 ## Figures S7, S8 and S9
 
 The results of Figures S7, S8 and S9 are already computed as a result of the experiment used to generate results for Figure 3 - S2.  To generate the figures, run the corresponding cells in the following notebook: ```notebooks/results/figures_synthetic_evaluation.ipynb```.
+
+# How to cite
+If you re-use this code, please cite our paper as:
+
+```
+@article{crectu2024correlation,
+  title={Correlation inference attacks against machine learning models},
+  author={Cre{\c{t}}u, Ana-Maria and Gu{\'e}pin, Florent and de Montjoye, Yves-Alexandre},
+  journal={Science Advances},
+  volume={10},
+  number={28},
+  pages={eadj9260},
+  year={2024},
+  publisher={American Association for the Advancement of Science}
+}
+```
